@@ -1,0 +1,238 @@
+/** General Info For This CSS file ********************************************
+ *
+ * Project      : Clock OOPVersion
+ * File Type    : CSS File
+ * File Editor  : File was last edited using: VSCodium
+ * Description  : A CSS designed clock
+ ******************************************************************************
+ * Author   : Toni Calfim (751127@gmail.com)
+ ******************************************************************************
+ * Created  : Jan, 2023
+ * Modified : Jan, 2023
+ *
+ * Licence : MIT - A short and simple permissive license with conditions only
+ * requiring preservation of copyright and license notices. Licensed works,
+ * modifications, and larger works may be distributed under different terms
+ * and without source code. Permissions: commercial use, modification,
+ * distribution and private use.
+ *
+ * Copyright (c) 2023 751127@gmail.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ ******************************************************************************
+ * v1.0.0.1:
+*************************************************************************** **/
+
+:root {
+
+    /** Make font-size default to 10px related to the browser's default 16px so
+     that the rem (root eM) can be used to scale fonts based on a 10 base
+     scale. Then now 20px will be 2rem proportional to the root, and 35px will
+     be 3.5rem proportional to the root, etc...
+    */
+    font-size: 62.5%;
+
+    --globalColor: khaki;
+
+    --bgImageURL: url("");
+
+}
+
+body {
+
+    background-color: var(--globalColor);
+    background-image: var(--bgImageURL);
+    background-size: cover;
+    background-attachment: fixed;
+
+    overflow: hidden;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    justify-items: flex-start;
+    align-content: flex-start;
+    gap: 0px;
+    padding: 0px;
+
+}
+
+.clock {
+
+    background-color: lightgrey;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+    border: 5px solid darkgray;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 7%);
+
+    /** This position children (img) inside */
+    position: relative;
+
+}
+
+img {
+
+    /** This position this child inside parent (.clock) */
+    position: absolute;
+
+    top: 60px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 70px;
+
+    z-index: 1;
+
+}
+
+.numbers div {
+
+    /** This position this child inside parent (.clock) */
+    position: absolute;
+
+    color: lightgoldenrodyellow;
+    font-size: 2.7rem;
+    font-weight: bold;
+
+}
+
+.twelve {
+
+    top: 6px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.three {
+
+    right: 6px;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.six {
+
+    bottom: 6px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.nine {
+
+    left: 6px;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.arrows {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    justify-items: flex-start;
+    align-content: flex-start;
+    padding: 0px;
+    gap: 0px;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.arrows div {
+
+    /** This position this child inside parent (.clock) */
+    position: absolute;
+
+    width: 7px;
+    height: 125px;
+
+    background-color: white;
+
+    /** This changes the axis from the middle of the
+     object to its bottom, and then makes the bottom
+     go up 50% from the bottom of the parent, so these
+     modifications cause the object rotate around the
+     botton and no more around the center.
+    */
+    transform-origin: bottom;
+    bottom: 50%;
+
+    border-radius: 50% 50% 0% 0%;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 70%);
+
+    z-index: 2;
+
+}
+
+.arrows .hour {
+
+    /** Makes the hour hand smaller */
+    height: 100px;
+
+    transform: rotate(0deg);
+
+}
+
+.arrow .minute {
+
+    transform: rotate(0deg);
+
+}
+
+.arrows .second {
+
+    background-color: goldenrod;
+
+    /** Makes the second hand thinner */
+    width: 2.25px;
+
+    transform: rotate(0deg);
+
+}
+
+.arrows .milisecond {
+
+    /** Makes the second hand thinner */
+    width: 0.75px;
+
+    /** 0 px 'coz don't want to use the hand now */
+    width: 0px;
+
+    transform: rotate(0deg);
+
+}
