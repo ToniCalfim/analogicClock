@@ -86,7 +86,7 @@ body {
 
     border-radius: 50%;
     border: 5px solid darkgray;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 7%);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 50%);
 
     /** This position children (img) inside */
     position: relative;
@@ -123,9 +123,27 @@ img {
 .twelve {
 
     top: 6px;
-
     left: 50%;
+
     transform: translateX(-50%);
+
+}
+
+.one {
+
+    top: 15%;
+    right: 70px;
+
+    transform: translateY(-50%);
+
+}
+
+.two {
+
+    top: 30%;
+    right: 25px;
+
+    transform: translateY(-50%);
 
 }
 
@@ -138,20 +156,74 @@ img {
 
 }
 
+.four {
+
+    top: 60%;
+    right: 25px;
+
+    transform: translateY(50%);
+
+}
+
+.five {
+
+    top: 75%;
+    right: 70px;
+
+    transform: translateY(50%);
+
+}
+
 .six {
 
+    left: 50%;
     bottom: 6px;
 
-    left: 50%;
     transform: translateX(-50%);
+
+}
+
+.seven {
+
+    top: 75%;
+    left: 80px;
+
+    transform: translateY(70%);
+
+}
+
+.eight {
+
+    top: 60%;
+    left: 30px;
+
+    transform: translateY(70%);
 
 }
 
 .nine {
 
+    top: 50%;
     left: 6px;
 
-    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.ten {
+
+    top: 30%;
+    left: 25px;
+
+    transform: translateY(-50%);
+
+}
+
+.eleven {
+
+    top: 15%;
+    left: 70px;
+
     transform: translateY(-50%);
 
 }
@@ -219,7 +291,7 @@ img {
     background-color: goldenrod;
 
     /** Makes the second hand thinner */
-    width: 2.25px;
+    width: 1.50px;
 
     transform: rotate(0deg);
 
